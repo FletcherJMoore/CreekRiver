@@ -23,6 +23,19 @@ public class CreekRiverDbContext : DbContext
         modelBuilder.Entity<Campsite>().HasData(new Campsite[]
         {
             new Campsite {Id = 1, CampsiteTypeId = 1, Nickname = "Barred Owl", ImageUrl="https://tnstateparks.com/assets/images/content-images/campgrounds/249/colsp-area2-site73.jpg"},
+            new Campsite {Id = 2, CampsiteTypeId = 2, Nickname = "Wilderness Whispers", ImageUrl="https://www.familyparks.com.au/wp-content/uploads/2021/12/shutterstock_462419059-scaled.jpg"},
+            new Campsite {Id = 3, CampsiteTypeId = 3, Nickname = "Adventure Haven", ImageUrl="https://www.rontar.com/blog/wp-content/uploads/2024/05/campsite-name-ideas.jpg"},
+            new Campsite {Id = 4, CampsiteTypeId = 4, Nickname = "Enchanted Forest Retreat", ImageUrl="https://australia.businessesforsale.com/australian/static/articleimage?articleId=12982&name=run-campsite"},
+        });
+
+        modelBuilder.Entity<UserProfile>().HasData(new UserProfile[]
+        {
+            new UserProfile {Id = 1, Email = "me@example.com", FirstName = "John", LastName = "Doe"}
+        });
+
+        modelBuilder.Entity<Reservation>().HasData(new Reservation[]
+        {
+            new Reservation {Id = 1, CampsiteId = 2, CheckinDate = new DateTime(2024, 07, 17), CheckoutDate = new DateTime(2024, 07, 24), UserProfileId = 1}
         });
     }
 
